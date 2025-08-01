@@ -36,7 +36,7 @@ async function initDB() {
 }
 
 app.get("/health", (req, res) => {
-    console.log("Server is working!");
+    res.send("Server is working!");
 })
 
 app.use("/api/transactions", transactionsRoute);
