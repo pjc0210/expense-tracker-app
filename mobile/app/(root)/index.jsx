@@ -16,13 +16,17 @@ export default function Page() {
   }, [loadData]);
 
   console.log("transactions: ", transactions)
-  console.log("summary: ", transactions)
+  console.log("summary: ", summary)
 
   return (
     <View>
       <SignedIn>
         <Text>Hello {user?.emailAddresses[0].emailAddress}</Text>
+        <Text>Income: {summary.income}</Text>
+        <Text>Balance: {summary.balance}</Text>
+        <Text>Expenses: {summary.expense}</Text>
         <SignOutButton />
+
       </SignedIn>
       <SignedOut>
         <Link href="/(auth)/sign-in">
